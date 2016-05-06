@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "com.mac.isaac.webservicesapp"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        resValue "string", "app_name", '"Disney"'
+        resValue "string", "api_url", '"http://api.duckduckgo.com/?q=disney+characters&amp;format=json"'
+        resValue "string", "image_url", '"http://icons.iconseeker.com/png/fullsize/icons-web-20/picasa-2.png"'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        southpark {
+            applicationId 'com.mac.parsing.southpark'
+            versionCode 1
+            versionName 'v1.0'
+            resValue "string", "app_name", '"South Park"'
+            resValue "string", "api_url", '"http://api.duckduckgo.com/?q=south+park+characters&format=json"'
+            resValue "string", "image_url", '"http://www.ps4secrets.com/img/131223-ps4-south-park.jpg"'
+        }
+        starwars {
+            applicationId 'com.mac.parsing.starwars'
+            versionCode 1
+            versionName 'v1.0'
+            resValue "string", "app_name", '"Star Wars"'
+            resValue "string", "api_url", '"http://api.duckduckgo.com/?q=star+wars+characters&format=json"'
+            resValue "string", "image_url", '"http://img.lum.dolimg.com/v1/images/tfa_poster_wide_header_adb92fa0.jpeg?region=61%2C271%2C1937%2C1089&width=600"'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.4.2'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.4.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.2'
+}
